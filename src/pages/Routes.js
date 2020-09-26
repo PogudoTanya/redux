@@ -6,6 +6,7 @@ import useRedditApi from 'hooks/useRedditApi';
 import Login from 'pages/login';
 import Callback from 'pages/callback';
 import Home from 'pages/home';
+import NotFound from './notFound';
 
 function Routes() {
   const [,,isLoggedIn] = useRedditApi();
@@ -14,6 +15,7 @@ function Routes() {
     return (
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/not_found" exact component={NotFound}/>
         <Redirect to="/" />
       </Switch>
     );
